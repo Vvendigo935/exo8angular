@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.pokeService.getPokemon(id).subscribe({
       next: (data) => {
         this.pokemon = data;
-        this.currentId = data.id;
+        this.currentId = id;
       },
       error: (err) => {
         console.error("Erreur API :", err);

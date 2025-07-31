@@ -15,6 +15,10 @@ export class PokeService {
     return this.http.get<PokemonType[]>(this.baseUrl)
   }
 
+  getPokemon(id : number): Observable<PokemonType[]>{
+    return this.http.get<PokemonType[]>(this.baseUrl + '${id}')
+  }
+
   
 
 }

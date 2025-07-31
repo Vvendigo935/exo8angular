@@ -1,5 +1,5 @@
 <div class="container" *ngIf="pokemon">
-    <h2>#{{ pokemon.id }} - {{ pokemon.name | titlecase }}</h2>
+    <h2>#{{ pokemon.id }} - {{ pokemon.name }}</h2>
   
     <img [src]="pokemon.sprites?.front_default" alt="{{ pokemon.name }}">
   
@@ -12,13 +12,14 @@
       </span>
     </p>
   
-    <p><strong>Attaques :</strong>
+    <div>
+        Attaques :
       <ul>
         <li *ngFor="let move of pokemon.moves.slice(0, 5)">
           {{ move.move.name }}
         </li>
       </ul>
-    </p>
+    </div>
   
     <button (click)="prevPokemon()" [disabled]="currentId === 1">⬅️ Précédent</button>
     <button (click)="nextPokemon()" [disabled]="currentId === maxId">Suivant ➡️</button>
